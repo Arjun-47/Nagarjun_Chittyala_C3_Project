@@ -62,4 +62,7 @@ public class Restaurant {
         return name;
     }
 
+    public int getOrderCost(List<String> itemNames)  {
+        return itemNames.stream().map(this::findItemByName).mapToInt(Item::getPrice).sum();
+    }
 }
